@@ -1,0 +1,67 @@
+<h1>Registrar Empleado</h1>
+<form [formGroup]="empleadoForm">
+    <div class="row">
+        <p>Nombres:
+            <mat-form-field appearance="legacy">
+                <input formControlName="nombres" matInput placeholder="Ej. Eduardo">
+                <ng-container *ngIf="empleadoForm.get('nombres')?.hasError && empleadoForm.get('nombres')?.touched">
+                    <mat-error *ngIf="empleadoForm.get('nombres')?.hasError('required')">Ingrese un nombre
+                        Valido</mat-error>
+                </ng-container>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="row">
+        <p>Apellidos:
+            <mat-form-field appearance="legacy">
+                <input formControlName="apellidos" matInput placeholder="Ej. Gonzales">
+                <ng-container *ngIf="empleadoForm.get('apellidos')?.hasError && empleadoForm.get('apellidos')?.touched">
+                    <mat-error *ngIf="empleadoForm.get('apellidos')?.hasError('required')">Ingrese un apellido
+                        Valido</mat-error>
+                </ng-container>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="row">
+        <p>Edad:
+            <mat-form-field appearance="legacy">
+                <input type="number" min="0" formControlName="edad" matInput [disabled]="true" placeholder="Años">
+                <ng-container *ngIf="empleadoForm.get('edad')?.hasError && empleadoForm.get('edad')?.touched">
+                    <mat-error *ngIf="empleadoForm.get('edad')?.hasError('required')">Ingrese una edad
+                        Valida</mat-error>
+                </ng-container>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="row">
+        <p>Fecha Nacimiento:
+            <mat-form-field >
+                <mat-label>dd/mm/yyyy</mat-label>
+                <input formControlName="fecha_nacimiento" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <ng-container *ngIf="empleadoForm.get('fecha_nacimiento')?.hasError && empleadoForm.get('fecha_nacimiento')?.touched">
+                    <mat-error *ngIf="empleadoForm.get('fecha_nacimiento')?.hasError('required')">Ingrese fecha Valida</mat-error>
+                </ng-container>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="row">
+        <p>Salario:
+            <mat-form-field appearance="legacy">
+                <input formControlName="salario"  min="0" step="100" type="number" matInput [disabled]="true" placeholder="Ej. 2000.00">
+                <ng-container *ngIf="empleadoForm.get('salario')?.hasError && empleadoForm.get('salario')?.touched">
+                    <mat-error *ngIf="empleadoForm.get('salario')?.hasError('required')">Ingrese un monto Valido</mat-error>
+                </ng-container>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="row justify-content-evenly">
+        <div class="col-4">
+            <button mat-raised-button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+        </div>
+        <div class="col-4">
+            <button mat-raised-button color="primary" (click)="registrar()" cdkFocusInitial>Registrar</button>
+        </div>
+    </div>
+</form>
