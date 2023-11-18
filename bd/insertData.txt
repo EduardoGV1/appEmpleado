@@ -1,0 +1,7 @@
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Eduardo','Gonzales',32,'1989-11-25',2000);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Enrique','Velasquez',29,'1994-08-16',2500);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Juan','Perez',35,'1975-01-14',2700);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Alberto','Garcia',32,'1990-10-25',2859);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Jose','Bustamante',31,'1991-09-20',1542);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Paolo','Guerrero',30,'1992-12-25',2600);
+INSERT INTO Empleado (nombres, apellidos, edad,fecha_nacimiento,salario) VALUES ('Robertos','Bolañoz',36,'1975-12-01',4000);
