@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+      routes:
+      - id: servicio-empleado
+        uri: lb://servicio-empleado
+        predicates:
+        - Path=/msEmpleado/**
+        filters:
+        - StripPrefix=1
+          
